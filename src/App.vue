@@ -9,6 +9,8 @@
 <script>
 import testImage from './assets/test-image.svg'
 
+console.log('테스트 이미지 경로:', testImage)
+
 export default {
   name: 'App',
   data() {
@@ -21,6 +23,7 @@ export default {
 
 <style scoped>
 .container {
+  background-image: url('./assets/test-image.svg');
   max-width: 720px;
   margin: 2rem auto;
   padding: 1.5rem;

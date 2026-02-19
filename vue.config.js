@@ -1,15 +1,12 @@
 module.exports = {
   chainWebpack: config => {
-    const svgRule = config.module.rule('svg')
-
-    svgRule.uses.clear()
-
-    svgRule
+    config.module.rules.delete('svg');
+    config.module.rule('svg')
+      .test(/\.svg$/)
       .use('svg-url-loader')
       .loader('svg-url-loader')
       .options({
-        noquotes: true,
-        limit: 10000
-      })
+        limit: 0
+      });
   }
 }
